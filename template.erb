@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <style type="text/css" media="screen">@import "./iui/iui.css";</style>
+    <script type="application/x-javascript" src="./iui/iui.js"></script>
+    <title><%= @title %></title>
+  </head>
+  <body>
+    <div class="toolbar">
+        <h1 id="pageTitle"></h1>
+        <a id="backButton" class="button" href="#"></a>
+    </div>
+
+    <ul id="home" title="iStream" selected="true">
+      <% @program.each_with_index do|xs,i| %>
+      <li><a href="#l<%=u i %>"><%= xs.first %></a></li>
+      <% end %>
+    </ul>
+
+    <% @program.each_with_index do|xs,i| %>
+    <% title,videos = xs %>
+    <ul id="l<%= i %>" title="<%= title %>">
+      <% videos.zip(videos[1..-1]).each do|video,next_v| %>
+      <li>
+        <embed src="<%= video.thumbnail %>"
+               href="<%= video.video %>"
+	       <% if next_v %>
+	       qtnext1="<%= next_v.video %>"
+	       <% end %>
+               type="video/x-m4v"
+               target="myself"
+               width="80" height="60" />
+	<%= video.subtitle %>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </body>
+</html>

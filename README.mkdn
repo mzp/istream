@@ -1,0 +1,30 @@
+iStream: Video-sharing site for iPod touch/iPhone
+=================================================
+
+ABSTRACT
+--------
+iPod touch/iPhone向けの動画共有サイトっぽいものを作るためのスクリプト群です。
+
+
+必要なもの
+----------
+* iUI(http://code.google.com/p/iui/)
+* ffmpeg
+* Ruby 1.8.6 以降(おそらく多少古くても問題ない)
+
+
+含まれるスクリプト
+------------------
+
+* iPod touch/iPhone用の動画及びサムネイルを生成するスクリプト(ffmpeg.rb)
+* iUIを用いたiPod touch/iPhone風UIのHTMLを生成するスクリプト(index.rb)
+
+
+LICENCE
+-------
+MITライセンスに準じます。
+
+
+AUTHOR
+------
+MIZUNO "mzp" Hiroki (mzp_at_ocaml.jp)
