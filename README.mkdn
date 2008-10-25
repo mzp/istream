@@ -18,18 +18,18 @@ iPod touch/iPhone向けの動画共有サイトっぽいものを作るための
 
 ### 動画の変換 ###
 
- ruby ffmpeg.rb --profile=iPod --suffix=mp4 /pub/video/hoge.avi
+  ruby ffmpeg.rb --profile=iPod --suffix=mp4 /pub/video/hoge.avi
 
 カレントディレクトリにhoge.mp4が生成されます。
 
 ### サムネイルの生成 ###
 
- ruby ffmpeg.rb --profile=thumbnail --suffix=png /pub/video/hoge.avi
+  ruby ffmpeg.rb --profile=thumbnail --suffix=png /pub/video/hoge.avi
 
 ### HTMLの生成 ###
 動画が、カテゴリごとにディレクトリに分けられていると仮定しています。
 
- ruby index.rb foo/*.mp4 bar/*.mp4 > index.html
+  ruby index.rb foo/*.mp4 bar/*.mp4 > index.html
 
 LICENCE
 -------
